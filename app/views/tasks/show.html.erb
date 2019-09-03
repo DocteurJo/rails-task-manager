@@ -1,0 +1,12 @@
+
+<div class="container">
+  <h2><%= @task.title %></h2>
+  <div class="card mx-auto">
+    <div class="card-body mx-auto">
+      <p><%= @task.details %></p>
+    </div>
+    <%= link_to 'Edit your task', edit_task_path, class:"btn btn-primary" %>
+    <%= link_to 'Back to task list', tasks_path, class:"btn btn-secondary" %>
+  </div>
+</div>
+

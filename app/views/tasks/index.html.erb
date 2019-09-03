@@ -1,0 +1,20 @@
+
+<div class="container">
+  <h1>Tasks</h1>
+  <%= link_to '+ Add a new task', new_task_path %>
+  <br><br>
+  <% @tasks.each do |task| %>
+  <div class="form-check">
+    <% if task.completed == true %>
+    <% a = "checked"  %>
+    <% else a = "" %>
+    <% end  %>
+    <input type="checkbox" class="form-check-input" id="materialChecked2" <%= a %>>
+    <label class="form-check-label" for="materialChecked2"><%= link_to task.title, task_path(task) %>
+        <%= link_to ' ', task_path(task),
+      method: :delete,
+      class: "background-image",
+      data: { confirm: "Are you sure?" } %>
+    </label>
+  </div>
+<% end %>
